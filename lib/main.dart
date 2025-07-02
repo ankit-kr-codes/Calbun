@@ -12,10 +12,8 @@ class Calbun extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(fontFamily: "Delius_Swash_Caps"),
       scrollBehavior: const MaterialScrollBehavior(),
       routerConfig: router,
-      //
     );
   }
 }

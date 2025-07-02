@@ -1,5 +1,7 @@
-import 'package:calbun/presentation/welcome/form.dart';
-import 'package:calbun/presentation/welcome/welcome.dart';
+import 'package:calbun/presentation/home.dart';
+import 'package:calbun/presentation/login_form.dart';
+import 'package:calbun/presentation/signup_form.dart';
+import 'package:calbun/presentation/welcome.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter router = GoRouter(
@@ -11,13 +13,18 @@ GoRouter router = GoRouter(
       //
     ),
     GoRoute(
-      path: '/form1',
-      builder: (context, state) => const Form1(),
+      path: '/signup',
+      builder: (context, state) => const SignupForm(),
       //
     ),
     GoRoute(
-      path: '/form2',
-      builder: (context, state) => const Form2(),
+      path: '/login',
+      builder: (context, state) => const LoginForm(),
+      //
+    ),
+    GoRoute(
+      path: '/home',
+      builder: (context, state) => const Home(),
       //
     ),
   ],

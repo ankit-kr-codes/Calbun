@@ -5,7 +5,8 @@ class AppColors {
   static Color secondary = const Color.fromRGBO(116, 183, 118, 1);
   static Color darkGreen = const Color.fromRGBO(40, 100, 42, 1);
   static Color darkGreen02 = const Color.fromARGB(255, 20, 56, 22);
-  static Color softGreen = const Color.fromRGBO(220, 245, 221, 1);
+  static Color softGreen02 = const Color.fromRGBO(220, 245, 221, 1);
+  static Color softGreen = const Color.fromRGBO(234, 240, 235, 1);
 
   static Color white = const Color.fromRGBO(255, 255, 255, 1);
   static Color grey = const Color.fromRGBO(187, 187, 187, 1);
