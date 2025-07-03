@@ -1,6 +1,6 @@
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -17,7 +17,17 @@ class Home extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         actions: [
-          const Icon(CupertinoIcons.gear, size: 26),
+          GestureDetector(
+            onTap: () => context.push("/profile"),
+            child: ClipOval(
+              child: Image.asset(
+                'assets/images/profile.jpg',
+                fit: BoxFit.cover,
+                height: 35,
+                width: 35,
+              ),
+            ),
+          ),
           const SizedBox(width: 10),
         ],
       ),
@@ -312,37 +322,37 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
-        backgroundColor: AppColors.transparent,
-        unselectedItemColor: AppColors.black,
-        selectedItemColor: AppColors.darkGreen,
-        enableFeedback: false,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            label: "Home",
-            icon: Icon(Icons.home_outlined),
-            //
-          ),
-          BottomNavigationBarItem(
-            label: "Meal",
-            icon: Icon(Icons.room_service_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: "Workout",
-            icon: Icon(Icons.fitness_center_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: "Meditation",
-            icon: Icon(Icons.self_improvement_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: "Profile",
-            icon: Icon(Icons.account_circle_outlined),
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   elevation: 0,
+      //   backgroundColor: AppColors.transparent,
+      //   unselectedItemColor: AppColors.black,
+      //   selectedItemColor: AppColors.darkGreen,
+      //   enableFeedback: false,
+      //   type: BottomNavigationBarType.fixed,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       label: "Home",
+      //       icon: Icon(Icons.home_outlined),
+      //       //
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "Meal",
+      //       icon: Icon(Icons.room_service_outlined),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "Workout",
+      //       icon: Icon(Icons.fitness_center_outlined),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "Meditation",
+      //       icon: Icon(Icons.self_improvement_outlined),
+      //     ),
+      //     BottomNavigationBarItem(
+      //       label: "Profile",
+      //       icon: Icon(Icons.account_circle_outlined),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }

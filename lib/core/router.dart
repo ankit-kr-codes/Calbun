@@ -1,10 +1,16 @@
+import 'package:calbun/main.dart';
 import 'package:calbun/presentation/home.dart';
 import 'package:calbun/presentation/login_form.dart';
+import 'package:calbun/presentation/meal.dart';
+import 'package:calbun/presentation/meditation.dart';
+import 'package:calbun/presentation/profile.dart';
+import 'package:calbun/presentation/settings.dart';
 import 'package:calbun/presentation/signup_form.dart';
 import 'package:calbun/presentation/welcome.dart';
+import 'package:calbun/presentation/workout.dart';
 import 'package:go_router/go_router.dart';
 
-GoRouter router = GoRouter(
+final router = GoRouter(
   initialLocation: '/welcome',
   routes: [
     GoRoute(
@@ -23,9 +29,40 @@ GoRouter router = GoRouter(
       //
     ),
     GoRoute(
-      path: '/home',
-      builder: (context, state) => const Home(),
+      path: '/profile',
+      builder: (context, state) => const Profile(),
       //
+    ),
+    ShellRoute(
+      builder: (context, state, child) => MainShell(child: child),
+      routes: [
+        GoRoute(
+          path: '/home',
+          builder: (context, state) => const Home(),
+          //
+        ),
+        GoRoute(
+          path: '/meal',
+          builder: (context, state) => const Meal(),
+          //
+        ),
+        GoRoute(
+          path: '/workout',
+          builder: (context, state) => const Workout(),
+          //
+        ),
+        GoRoute(
+          path: '/meditation',
+          builder: (context, state) => const Meditation(),
+          //
+        ),
+
+        GoRoute(
+          path: '/settings',
+          builder: (context, state) => const Settings(),
+          //
+        ),
+      ],
     ),
   ],
 );
