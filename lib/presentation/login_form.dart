@@ -1,3 +1,4 @@
+import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(10),
       borderSide: BorderSide.none,
     );
     return Scaffold(
@@ -24,57 +25,39 @@ class LoginForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Email",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
-                filled: true,
-                fillColor: AppColors.softGreen,
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Password",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
-                filled: true,
-                fillColor: AppColors.softGreen,
+
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
 
             GestureDetector(
               onTap: () {},
-              child: Container(
+              child: PrimaryThemedContainer(
                 width: double.maxFinite,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(20),
-                ),
                 child: Center(
                   child: Text(
                     textAlign: TextAlign.center,

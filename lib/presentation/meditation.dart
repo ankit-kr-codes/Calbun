@@ -6,6 +6,8 @@ class Meditation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -16,7 +18,7 @@ class Meditation extends StatelessWidget {
             textAlign: TextAlign.center,
             "Coming Soon!",
             style: TextStyle(
-              color: AppColors.primary,
+              color: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
               fontWeight: FontWeight.bold,
               fontSize: 50,
             ),

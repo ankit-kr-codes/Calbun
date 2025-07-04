@@ -1,3 +1,4 @@
+import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -56,249 +59,110 @@ class Home extends StatelessWidget {
                 value: 0.6,
                 minHeight: 10,
                 borderRadius: BorderRadius.circular(10),
-                color: AppColors.primary,
-                backgroundColor: AppColors.softGreen,
               ),
               const SizedBox(height: 10),
               Text(
                 "60% of your daily goal",
                 style: TextStyle(
                   // fontWeight: FontWeight.bold,
-                  color: AppColors.primary,
+                  color: isDark
+                      ? AppColors.darkPrimary
+                      : AppColors.lightPrimary,
                   fontSize: 12,
                 ),
               ),
 
               section(
                 "Macros",
-                SizedBox(
-                  height: 250,
-                  child: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          childAspectRatio: 1.5,
-                        ),
-                    itemCount: 4,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: const EdgeInsets.all(3),
-                        decoration: BoxDecoration(
-                          color: AppColors.softGreen02,
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: AppColors.darkGreen,
-                            width: 2,
-                          ),
-                        ),
-                        child: const Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Protien",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                              ),
-                            ),
-                            Text(
-                              "20g",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+                GridView.builder(
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1.5,
                   ),
+                  itemCount: 4,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return const SquaredBoxedContainer(
+                      bordered: true,
+                      margin: EdgeInsets.all(4),
+                      borderWidth: 0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Protien",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                          Text(
+                            "20g",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ),
               section(
                 "Meals",
-                Column(
+                const Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: AppColors.softGreen,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.free_breakfast_outlined,
-                            color: AppColors.darkGreen,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Breakfast",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "400 Calories",
-                              style: TextStyle(
-                                color: AppColors.primary,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    DataTile(
+                      title: "Breakfast",
+                      unit: "Calories",
+                      value: 231,
+                      iconData: Icons.free_breakfast_outlined,
                     ),
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: AppColors.softGreen,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.lunch_dining_outlined,
-                            color: AppColors.darkGreen,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Lunch",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "400 Calories",
-                              style: TextStyle(
-                                color: AppColors.primary,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    SizedBox(height: 20),
+                    DataTile(
+                      title: "Lunch",
+                      unit: "Calories",
+                      value: 400,
+                      iconData: Icons.lunch_dining_outlined,
                     ),
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: AppColors.softGreen,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.dinner_dining_rounded,
-                            color: AppColors.darkGreen,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Dinner",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "400 Calories",
-                              style: TextStyle(
-                                color: AppColors.primary,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    SizedBox(height: 20),
+                    DataTile(
+                      title: "Dinner",
+                      unit: "Calories",
+                      value: 700,
+                      iconData: Icons.dinner_dining_outlined,
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
               section(
                 "Workouts",
-                Column(
+                const Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: AppColors.softGreen,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.run_circle_outlined,
-                            color: AppColors.darkGreen,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Morining Run",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "30 minutes",
-                              style: TextStyle(
-                                color: AppColors.primary,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    DataTile(
+                      title: "Morning Run",
+                      unit: "minutes",
+                      value: 30,
+                      iconData: Icons.run_circle_outlined,
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
               section(
                 "Meditation",
-                Column(
+                const Column(
                   children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: AppColors.softGreen,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Icon(
-                            Icons.self_improvement,
-                            color: AppColors.darkGreen,
-                          ),
-                        ),
-                        const SizedBox(width: 15),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              "Mindfulness Session",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "15 minutes",
-                              style: TextStyle(
-                                color: AppColors.primary,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                    DataTile(
+                      title: "Mindfulness Session",
+                      unit: "minutes",
+                      value: 15,
+                      iconData: Icons.self_improvement,
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                   ],
                 ),
               ),
@@ -307,10 +171,10 @@ class Home extends StatelessWidget {
         ),
       ),
       floatingActionButton: Container(
-        height: 50,
-        width: 130,
+        height: 60,
+        width: 140,
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -322,37 +186,6 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   elevation: 0,
-      //   backgroundColor: AppColors.transparent,
-      //   unselectedItemColor: AppColors.black,
-      //   selectedItemColor: AppColors.darkGreen,
-      //   enableFeedback: false,
-      //   type: BottomNavigationBarType.fixed,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       label: "Home",
-      //       icon: Icon(Icons.home_outlined),
-      //       //
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "Meal",
-      //       icon: Icon(Icons.room_service_outlined),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "Workout",
-      //       icon: Icon(Icons.fitness_center_outlined),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "Meditation",
-      //       icon: Icon(Icons.self_improvement_outlined),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       label: "Profile",
-      //       icon: Icon(Icons.account_circle_outlined),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size mediaQuery = MediaQuery.of(context).size;
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -15,14 +16,6 @@ class Profile extends StatelessWidget {
           "Profile",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        // actions: [
-        //   GestureDetector(
-        //     onTap: () => context.go('/settings'),
-        //     child: const Icon(CupertinoIcons.gear),
-        //   ),
-        //   const SizedBox(width: 10),
-        //   //
-        // ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -45,11 +38,7 @@ class Profile extends StatelessWidget {
               child: Text(
                 textAlign: TextAlign.center,
                 "Ankit Kumar",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  //
-                ),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
             ),
             const SizedBox(height: 3),
@@ -57,7 +46,11 @@ class Profile extends StatelessWidget {
               child: Text(
                 textAlign: TextAlign.center,
                 "Fitness Enthusiast",
-                style: TextStyle(color: AppColors.primary),
+                style: TextStyle(
+                  color: isDark
+                      ? AppColors.darkPrimary
+                      : AppColors.lightPrimary,
+                ),
               ),
             ),
             const SizedBox(height: 3),
@@ -65,74 +58,80 @@ class Profile extends StatelessWidget {
               child: Text(
                 textAlign: TextAlign.center,
                 "Joined 2025",
-                style: TextStyle(color: AppColors.primary),
-                //
+                style: TextStyle(
+                  color: isDark
+                      ? AppColors.darkPrimary
+                      : AppColors.lightPrimary,
+                ),
               ),
             ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  margin: const EdgeInsets.all(3),
-                  width: mediaQuery.width * 0.45,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: AppColors.softGreen,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "250",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                Expanded(
+                  child: SquaredBoxedContainer(
+                    bordered: false,
+                    margin: const EdgeInsets.all(3),
+                    width: double.infinity,
+                    height: 150,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "250",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "Workouts",
-                        style: TextStyle(color: AppColors.primary),
-                      ),
-                    ],
+                        Text(
+                          "Workouts",
+                          style: TextStyle(
+                            color: isDark
+                                ? AppColors.darkPrimary
+                                : AppColors.lightPrimary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.all(3),
-                  width: mediaQuery.width * 0.45,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: AppColors.softGreen,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "4300",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                Expanded(
+                  child: SquaredBoxedContainer(
+                    bordered: false,
+                    margin: const EdgeInsets.all(3),
+                    width: double.infinity,
+                    height: 150,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "4300",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
                         ),
-                      ),
-                      Text(
-                        "Kcal Burned",
-                        style: TextStyle(color: AppColors.primary),
-                      ),
-                    ],
+                        Text(
+                          "Kcal Burned",
+                          style: TextStyle(
+                            color: isDark
+                                ? AppColors.darkPrimary
+                                : AppColors.lightPrimary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
-            Container(
+            SquaredBoxedContainer(
+              bordered: false,
               margin: const EdgeInsets.all(3),
               width: double.maxFinite,
               height: 150,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: AppColors.softGreen,
-              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -142,7 +141,11 @@ class Profile extends StatelessWidget {
                   ),
                   Text(
                     "Meditation Streaks",
-                    style: TextStyle(color: AppColors.primary),
+                    style: TextStyle(
+                      color: isDark
+                          ? AppColors.darkPrimary
+                          : AppColors.lightPrimary,
+                    ),
                   ),
                 ],
               ),
@@ -151,11 +154,7 @@ class Profile extends StatelessWidget {
             const SizedBox(height: 20),
             const Text(
               "Personal Info",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-                //
-              ),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const SizedBox(height: 20),
           ],

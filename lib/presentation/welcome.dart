@@ -1,3 +1,4 @@
+import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -37,44 +38,34 @@ class Welcome extends StatelessWidget {
 
           //Texts
           SizedBox(height: size.height * 0.1),
-          Text(
+          const Text(
             "Your journey to a healthier you starts here",
             style: TextStyle(
               fontFamily: "Delius_Swash_Caps",
               fontSize: 26,
               fontWeight: FontWeight.bold,
-              color: AppColors.black,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               "Track your foods, count calories, and workouts all in one place",
-              style: TextStyle(
-                fontFamily: "Delius_Swash_Caps",
-                fontSize: 16,
-                color: AppColors.black,
-              ),
+              style: TextStyle(fontFamily: "Delius_Swash_Caps", fontSize: 16),
               textAlign: TextAlign.center,
             ),
           ),
 
           const SizedBox(height: 40),
-
-          //Buttons
           GestureDetector(
             onTap: () {
               context.push("/signup");
             },
-            child: Container(
+            child: PrimaryThemedContainer(
               width: size.width * 0.9,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-              decoration: BoxDecoration(
-                color: AppColors.primary,
-                borderRadius: BorderRadius.circular(20),
-              ),
+
               child: Text(
                 textAlign: TextAlign.center,
                 "Sign Up",
@@ -91,21 +82,13 @@ class Welcome extends StatelessWidget {
             onTap: () {
               context.push('/login');
             },
-            child: Container(
+            child: TertiaryThemedContainer(
               width: size.width * 0.9,
               padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-              decoration: BoxDecoration(
-                color: AppColors.softGreen,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
+              child: const Text(
                 textAlign: TextAlign.center,
                 "Login",
-                style: TextStyle(
-                  color: AppColors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -120,12 +103,10 @@ class Welcome extends StatelessWidget {
 
       //ToS and Privacy Policy
       bottomSheet: Container(
-        color: const Color.fromRGBO(249, 251, 249, 1),
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        child: Text(
+        child: const Text(
           textAlign: TextAlign.center,
           "By continuing, you agree to our Terms of Service and Privacy Policy",
-          style: TextStyle(color: AppColors.primary),
         ),
       ),
     );

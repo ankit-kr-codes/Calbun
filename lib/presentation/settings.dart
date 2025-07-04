@@ -32,6 +32,8 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -65,12 +67,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.person_outline_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.person_outline_outlined),
                 ),
                 title: const Text("Account"),
               ),
@@ -84,9 +85,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(Icons.email_outlined, color: AppColors.darkGreen),
+                  child: const Icon(Icons.email_outlined),
                 ),
                 title: const Text("Email"),
               ),
@@ -100,9 +103,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(Icons.lock_outline, color: AppColors.darkGreen),
+                  child: const Icon(Icons.lock_outline),
                 ),
                 title: const Text("Password"),
               ),
@@ -121,12 +126,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.straighten_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.straighten_outlined),
                 ),
                 title: const Text("Units of Measurments"),
               ),
@@ -140,12 +144,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.bedtime_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.bedtime_outlined),
                 ),
                 title: const Text("Theme"),
               ),
@@ -165,12 +168,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.help_outline_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.help_outline_outlined),
                 ),
                 title: const Text("Help Center"),
               ),
@@ -184,12 +186,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.headset_mic_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.headset_mic_outlined),
                 ),
                 title: const Text("Contact Support"),
               ),
@@ -210,12 +211,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(
-                    Icons.document_scanner_outlined,
-                    color: AppColors.darkGreen,
-                  ),
+                  child: const Icon(Icons.document_scanner_outlined),
                 ),
                 title: const Text("Credits & Licenses"),
               ),
@@ -229,9 +229,11 @@ class Settings extends StatelessWidget {
                   width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColors.softGreen,
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
                   ),
-                  child: Icon(Icons.info_outline, color: AppColors.darkGreen),
+                  child: const Icon(Icons.info_outline),
                 ),
                 title: const Text("About Us"),
               ),
@@ -250,11 +252,8 @@ Widget section(String title, IconData iconData) {
       Container(
         height: 50,
         width: 50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.softGreen,
-        ),
-        child: Icon(iconData, color: AppColors.darkGreen),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+        child: Icon(iconData),
       ),
       const SizedBox(width: 10),
       Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),

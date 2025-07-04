@@ -15,6 +15,8 @@ class Calbun extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       scrollBehavior: const MaterialScrollBehavior(),
       routerConfig: router,
     );
@@ -63,9 +65,6 @@ class MainShell extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         elevation: 0,
-        backgroundColor: AppColors.transparent,
-        unselectedItemColor: AppColors.black,
-        selectedItemColor: AppColors.darkGreen,
         enableFeedback: false,
         onTap: onTap,
         type: BottomNavigationBarType.fixed,

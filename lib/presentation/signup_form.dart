@@ -1,3 +1,4 @@
+import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -6,10 +7,13 @@ class SignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(10),
       borderSide: BorderSide.none,
     );
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -24,98 +28,69 @@ class SignupForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Full Name",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
                 filled: true,
-                fillColor: AppColors.softGreen,
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Email",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
                 filled: true,
-                fillColor: AppColors.softGreen,
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Password",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
                 filled: true,
-                fillColor: AppColors.softGreen,
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
             TextField(
-              cursorColor: AppColors.darkGreen,
+              // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Confirm Password",
-                hintStyle: TextStyle(
-                  color: AppColors.darkGreen,
-                  fontFamily: "Lexend",
-                ),
                 filled: true,
-                fillColor: AppColors.softGreen,
                 border: border,
                 enabledBorder: border,
                 focusedBorder: border,
               ),
-              style: TextStyle(color: AppColors.darkGreen),
             ),
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () {},
-              child: Container(
+              child: PrimaryThemedContainer(
                 width: double.maxFinite,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                  borderRadius: BorderRadius.circular(20),
-                ),
                 child: Center(
                   child: Text(
                     textAlign: TextAlign.center,
@@ -133,9 +108,8 @@ class SignupForm extends StatelessWidget {
             Text(
               "Already have an account? Sign in",
               style: TextStyle(
-                color: AppColors.primary,
+                color: isDark ? AppColors.dark4 : AppColors.light4,
                 decoration: TextDecoration.underline,
-                decorationColor: AppColors.primary,
               ),
             ),
           ],
