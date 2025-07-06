@@ -219,3 +219,40 @@ class DataTile extends StatelessWidget {
     );
   }
 }
+
+//Radio Tile
+class BorderedRadioTile extends StatelessWidget {
+  final Widget title;
+  final Object value;
+  final Object groupValue;
+  final void Function(Object?)? onChanged;
+
+  const BorderedRadioTile({
+    super.key,
+    required this.title,
+    required this.value,
+    required this.groupValue,
+    this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      padding: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.grey),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: RadioListTile(
+        value: value,
+        groupValue: groupValue,
+        onChanged: onChanged,
+        activeColor: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
+        controlAffinity: ListTileControlAffinity.trailing,
+        title: title,
+      ),
+    );
+  }
+}

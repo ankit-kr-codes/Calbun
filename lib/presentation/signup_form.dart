@@ -9,11 +9,6 @@ class SignupForm extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
-    OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide.none,
-    );
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -27,63 +22,47 @@ class SignupForm extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Full Name",
-                filled: true,
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Email",
-                filled: true,
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Password",
-                filled: true,
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Confirm Password",
-                filled: true,
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),

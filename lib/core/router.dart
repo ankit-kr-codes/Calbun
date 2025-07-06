@@ -5,6 +5,12 @@ import 'package:calbun/presentation/meal.dart';
 import 'package:calbun/presentation/meditation.dart';
 import 'package:calbun/presentation/profile.dart';
 import 'package:calbun/presentation/settings.dart';
+import 'package:calbun/presentation/settings_subpages/about.dart';
+import 'package:calbun/presentation/settings_subpages/change_password.dart';
+import 'package:calbun/presentation/settings_subpages/contact_support.dart';
+import 'package:calbun/presentation/settings_subpages/email.dart';
+import 'package:calbun/presentation/settings_subpages/measurements.dart';
+import 'package:calbun/presentation/settings_subpages/theme_page.dart';
 import 'package:calbun/presentation/signup_form.dart';
 import 'package:calbun/presentation/welcome.dart';
 import 'package:calbun/presentation/workout.dart';
@@ -12,6 +18,7 @@ import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
   initialLocation: '/welcome',
+  // initialLocation: '/about',
   routes: [
     GoRoute(
       path: '/welcome',
@@ -33,6 +40,38 @@ final router = GoRouter(
       builder: (context, state) => const Profile(),
       //
     ),
+    GoRoute(
+      path: '/email',
+      builder: (context, state) => const EmailSettings(),
+      //
+    ),
+    GoRoute(
+      path: '/changePassword',
+      builder: (context, state) => const ChangePassword(),
+      //
+    ),
+    GoRoute(
+      path: '/measurements',
+      builder: (context, state) => const Measurements(),
+      //
+    ),
+    GoRoute(
+      path: '/themepage',
+      builder: (context, state) => const ThemePage(),
+      //
+    ),
+    GoRoute(
+      path: '/contactsupport',
+      builder: (context, state) => const ContactSupport(),
+      //
+    ),
+    GoRoute(
+      path: '/about',
+      builder: (context, state) => const About(),
+      //
+    ),
+
+    //For Bottom Navigtion Bar
     ShellRoute(
       builder: (context, state, child) => MainShell(child: child),
       routes: [

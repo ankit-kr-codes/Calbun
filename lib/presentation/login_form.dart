@@ -7,10 +7,6 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    OutlineInputBorder border = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide.none,
-    );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -24,32 +20,25 @@ class LoginForm extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Email",
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),
-            TextField(
+            const TextField(
               // cursorColor: AppColors.darkGreen,
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(
+                contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
                   vertical: 1,
                 ),
                 hintText: "Password",
-
-                border: border,
-                enabledBorder: border,
-                focusedBorder: border,
               ),
             ),
             const SizedBox(height: 20),

@@ -77,7 +77,9 @@ class Settings extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push('/email');
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(
@@ -95,7 +97,9 @@ class Settings extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push('/changePassword');
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(
@@ -109,7 +113,7 @@ class Settings extends StatelessWidget {
                   ),
                   child: const Icon(Icons.lock_outline),
                 ),
-                title: const Text("Password"),
+                title: const Text("Change Password"),
               ),
               const SizedBox(height: 20),
               const Text(
@@ -118,7 +122,9 @@ class Settings extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push("/measurements");
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(
@@ -136,7 +142,9 @@ class Settings extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push("/themepage");
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(
@@ -158,27 +166,29 @@ class Settings extends StatelessWidget {
                 "Help & Support",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
+              // const SizedBox(height: 20),
+              // ListTile(
+              //   onTap: () {},
+              //   hoverColor: AppColors.transparent,
+              //   splashColor: AppColors.transparent,
+              //   leading: Container(
+              //     height: 50,
+              //     width: 50,
+              //     decoration: BoxDecoration(
+              //       borderRadius: BorderRadius.circular(10),
+              //       color: isDark
+              //           ? AppColors.darkTertiary
+              //           : AppColors.lightTertiary,
+              //     ),
+              //     child: const Icon(Icons.help_outline_outlined),
+              //   ),
+              //   title: const Text("Help Center"),
+              // ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
-                hoverColor: AppColors.transparent,
-                splashColor: AppColors.transparent,
-                leading: Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: isDark
-                        ? AppColors.darkTertiary
-                        : AppColors.lightTertiary,
-                  ),
-                  child: const Icon(Icons.help_outline_outlined),
-                ),
-                title: const Text("Help Center"),
-              ),
-              const SizedBox(height: 20),
-              ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push("/contactsupport");
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(
@@ -221,7 +231,9 @@ class Settings extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ListTile(
-                onTap: () {},
+                onTap: () {
+                  context.push('/about');
+                },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
                 leading: Container(

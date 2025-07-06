@@ -45,6 +45,10 @@ class AppColors {
   ];
 }
 
+OutlineInputBorder border = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(10),
+  borderSide: BorderSide.none,
+);
 // Light Theme
 final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
@@ -62,6 +66,9 @@ final ThemeData lightTheme = ThemeData(
     fillColor: AppColors.lightTertiary,
     filled: true,
     hintStyle: TextStyle(color: AppColors.light4),
+    border: border,
+    enabledBorder: border,
+    focusedBorder: border,
   ),
   progressIndicatorTheme: ProgressIndicatorThemeData(
     color: AppColors.lightPrimary,
@@ -96,6 +103,9 @@ final ThemeData darkTheme = ThemeData(
     fillColor: AppColors.darkTertiary,
     filled: true,
     hintStyle: TextStyle(color: AppColors.dark4),
+    border: border,
+    enabledBorder: border,
+    focusedBorder: border,
   ),
   progressIndicatorTheme: ProgressIndicatorThemeData(
     color: AppColors.darkPrimary,
