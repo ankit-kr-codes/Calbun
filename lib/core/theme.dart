@@ -95,6 +95,7 @@ final ThemeData darkTheme = ThemeData(
   appBarTheme: AppBarTheme(
     backgroundColor: AppColors.darkBgColor,
     foregroundColor: AppColors.white,
+    centerTitle: true,
   ),
   bottomSheetTheme: BottomSheetThemeData(
     backgroundColor: AppColors.darkBgColor,

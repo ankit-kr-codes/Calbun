@@ -224,6 +224,9 @@ class DataTile extends StatelessWidget {
 class BorderedRadioTile extends StatelessWidget {
   final Widget title;
   final Object value;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? padding;
   final Object groupValue;
   final void Function(Object?)? onChanged;
 
@@ -233,6 +236,9 @@ class BorderedRadioTile extends StatelessWidget {
     required this.value,
     required this.groupValue,
     this.onChanged,
+    this.height,
+    this.width,
+    this.padding,
   });
 
   @override
@@ -240,7 +246,9 @@ class BorderedRadioTile extends StatelessWidget {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
 
     return Container(
-      padding: const EdgeInsets.all(5),
+      padding: padding ?? const EdgeInsets.all(5),
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.grey),
         borderRadius: BorderRadius.circular(10),

@@ -101,7 +101,7 @@ class About extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    '''I'm Ankit Sharma, the developer of Calbun. I'm an engineering student. I made this app to help people like me track their calories, workouts, and progress easily. I'm still learning and improving the app day by day.
+                    '''I'm Ankit Kumar, the developer of Calbun. I'm an engineering student. I made this app to help people like me track their calories, workouts, and progress easily. I'm still learning and improving the app day by day.
 
  If you find any bug or have a suggestion, feel free to reach out. I’ll be happy to hear from you! ''',
                   ),

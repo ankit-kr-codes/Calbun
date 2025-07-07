@@ -1,8 +1,9 @@
 import 'package:calbun/main.dart';
 import 'package:calbun/presentation/home.dart';
-import 'package:calbun/presentation/login_form.dart';
+import 'package:calbun/presentation/onboarding/login_form.dart';
 import 'package:calbun/presentation/meal.dart';
 import 'package:calbun/presentation/meditation.dart';
+import 'package:calbun/presentation/onboarding/user_info.dart';
 import 'package:calbun/presentation/profile.dart';
 import 'package:calbun/presentation/settings.dart';
 import 'package:calbun/presentation/settings_subpages/about.dart';
@@ -11,14 +12,14 @@ import 'package:calbun/presentation/settings_subpages/contact_support.dart';
 import 'package:calbun/presentation/settings_subpages/email.dart';
 import 'package:calbun/presentation/settings_subpages/measurements.dart';
 import 'package:calbun/presentation/settings_subpages/theme_page.dart';
-import 'package:calbun/presentation/signup_form.dart';
-import 'package:calbun/presentation/welcome.dart';
+import 'package:calbun/presentation/onboarding/signup_form.dart';
+import 'package:calbun/presentation/onboarding/welcome.dart';
 import 'package:calbun/presentation/workout.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
   initialLocation: '/welcome',
-  // initialLocation: '/about',
+  // initialLocation: '/userinfo',
   routes: [
     GoRoute(
       path: '/welcome',
@@ -68,6 +69,11 @@ final router = GoRouter(
     GoRoute(
       path: '/about',
       builder: (context, state) => const About(),
+      //
+    ),
+    GoRoute(
+      path: '/userinfo',
+      builder: (context, state) => const UserInfo(),
       //
     ),
 
