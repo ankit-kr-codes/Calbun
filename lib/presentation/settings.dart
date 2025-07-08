@@ -211,7 +211,7 @@ class Settings extends StatelessWidget {
               const SizedBox(height: 20),
               ListTile(
                 onTap: () {
-                  showLicensePage(context: context);
+                  showLicensePage(context: context, applicationName: "Calbun");
                 },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,

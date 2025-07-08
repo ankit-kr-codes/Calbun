@@ -92,12 +92,6 @@ class Welcome extends StatelessWidget {
               ),
             ),
           ),
-          IconButton(
-            onPressed: () {
-              context.push('/home');
-            },
-            icon: const Icon(Icons.home),
-          ),
         ],
       ),
 

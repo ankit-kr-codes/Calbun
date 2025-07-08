@@ -2,6 +2,7 @@ import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:calbun/data/food_database_region_data.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class DietPreference extends StatelessWidget {
   const DietPreference({super.key});
@@ -53,18 +54,29 @@ class DietPreference extends StatelessWidget {
                   border: Border.all(color: AppColors.grey),
                 ),
                 child: DropdownMenu(
-                  menuHeight: size.height * 0.7,
+                  menuHeight: size.height * 0.4,
                   width: double.maxFinite,
+                  menuStyle: MenuStyle(
+                    elevation: const WidgetStatePropertyAll(0),
+                    backgroundColor: isDark
+                        ? WidgetStatePropertyAll(AppColors.darkTertiary)
+                        : WidgetStatePropertyAll(AppColors.lightTertiary),
+                  ),
                   dropdownMenuEntries: foodDatabaseCountries,
                 ),
               ),
 
               const SizedBox(height: 30),
               Center(
-                child: PrimaryThemedContainer(
-                  child: Text(
-                    "Submit",
-                    style: TextStyle(color: AppColors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    context.go("/home");
+                  },
+                  child: PrimaryThemedContainer(
+                    child: Text(
+                      "Submit",
+                      style: TextStyle(color: AppColors.white),
+                    ),
                   ),
                 ),
               ),

@@ -52,6 +52,14 @@ class Goals extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               BorderedRadioTile(
+                title: const Text("No Activity"),
+                subtitle: const Text("No work, I'm lazy"),
+                value: "value",
+                groupValue: "groupValue",
+                onChanged: (p0) {},
+              ),
+              const SizedBox(height: 10),
+              BorderedRadioTile(
                 title: const Text("Sedentary"),
                 subtitle: const Text("Office work, minimal walking"),
                 value: "value",

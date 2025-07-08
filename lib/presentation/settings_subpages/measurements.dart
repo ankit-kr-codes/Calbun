@@ -63,6 +63,13 @@ class Measurements extends StatelessWidget {
                 onChanged: (value) {},
                 groupValue: "groupValue",
               ),
+              const SizedBox(height: 10),
+              BorderedRadioTile(
+                title: const Text("Inch(in)"),
+                value: 1,
+                onChanged: (value) {},
+                groupValue: "groupValue",
+              ),
 
               const SizedBox(height: 20),
               const Text(
