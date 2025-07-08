@@ -3,7 +3,9 @@ import 'package:calbun/presentation/home.dart';
 import 'package:calbun/presentation/onboarding/login_form.dart';
 import 'package:calbun/presentation/meal.dart';
 import 'package:calbun/presentation/meditation.dart';
-import 'package:calbun/presentation/onboarding/user_info.dart';
+import 'package:calbun/presentation/onboarding/user_info/basic_info.dart';
+import 'package:calbun/presentation/onboarding/user_info/diet_preference.dart';
+import 'package:calbun/presentation/onboarding/user_info/goals.dart';
 import 'package:calbun/presentation/profile.dart';
 import 'package:calbun/presentation/settings.dart';
 import 'package:calbun/presentation/settings_subpages/about.dart';
@@ -19,7 +21,7 @@ import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
   initialLocation: '/welcome',
-  // initialLocation: '/userinfo',
+  // initialLocation: '/dietpreference',
   routes: [
     GoRoute(
       path: '/welcome',
@@ -72,8 +74,18 @@ final router = GoRouter(
       //
     ),
     GoRoute(
-      path: '/userinfo',
-      builder: (context, state) => const UserInfo(),
+      path: '/basicinfo',
+      builder: (context, state) => const BasicInfo(),
+      //
+    ),
+    GoRoute(
+      path: '/goals',
+      builder: (context, state) => const Goals(),
+      //
+    ),
+    GoRoute(
+      path: '/dietpreference',
+      builder: (context, state) => const DietPreference(),
       //
     ),
 

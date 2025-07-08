@@ -226,6 +226,7 @@ class BorderedRadioTile extends StatelessWidget {
   final Object value;
   final double? height;
   final double? width;
+  final Widget? subtitle;
   final EdgeInsetsGeometry? padding;
   final Object groupValue;
   final void Function(Object?)? onChanged;
@@ -239,6 +240,7 @@ class BorderedRadioTile extends StatelessWidget {
     this.height,
     this.width,
     this.padding,
+    this.subtitle,
   });
 
   @override
@@ -260,6 +262,7 @@ class BorderedRadioTile extends StatelessWidget {
         activeColor: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
         controlAffinity: ListTileControlAffinity.trailing,
         title: title,
+        subtitle: subtitle,
       ),
     );
   }

@@ -70,7 +70,7 @@ class SignupForm extends StatelessWidget {
             const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                context.go("/userinfo");
+                context.go("/basicinfo");
               },
               child: PrimaryThemedContainer(
                 width: double.maxFinite,

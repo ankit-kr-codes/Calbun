@@ -1,9 +1,10 @@
 import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class UserInfo extends StatelessWidget {
-  const UserInfo({super.key});
+class BasicInfo extends StatelessWidget {
+  const BasicInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +26,25 @@ class UserInfo extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const LinearProgressIndicator(value: 1 / 3),
+              const SizedBox(height: 20),
+              Text(
+                "Step 1 of 3",
+                style: TextStyle(
+                  color: isDark
+                      ? AppColors.darkPrimary
+                      : AppColors.lightPrimary,
+                ),
+              ),
+
+              // const SizedBox(height: 20),
+              // const Center(
+              //   child: Text(
+              //     "Basic Info",
+              //     style: TextStyle(fontWeight: FontWeight.bold),
+              //   ),
+              // ),
+              const SizedBox(height: 30),
               const Text(
                 "Current Weight",
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -111,10 +131,15 @@ class UserInfo extends StatelessWidget {
 
               const SizedBox(height: 30),
               Center(
-                child: PrimaryThemedContainer(
-                  child: Text(
-                    "Continue",
-                    style: TextStyle(color: AppColors.white),
+                child: GestureDetector(
+                  onTap: () {
+                    context.push("/goals");
+                  },
+                  child: PrimaryThemedContainer(
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(color: AppColors.white),
+                    ),
                   ),
                 ),
               ),
