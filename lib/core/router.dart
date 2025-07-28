@@ -21,8 +21,8 @@ import 'package:calbun/presentation/workout.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
-  // initialLocation: '/welcome',
-  initialLocation: '/home',
+  initialLocation: '/welcome',
+  // initialLocation: '/home',
   routes: [
     GoRoute(
       path: '/welcome',

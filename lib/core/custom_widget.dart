@@ -265,3 +265,28 @@ class BorderedRadioTile extends StatelessWidget {
     );
   }
 }
+
+//Profile Picture
+class ProfilePicture extends StatelessWidget {
+  final double? height;
+  final double? width;
+  final double? fontSize;
+  const ProfilePicture({super.key, this.height, this.width, this.fontSize});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        height: height ?? 150,
+        width: width ?? 150,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.darkPrimary,
+        ),
+        child: Center(
+          child: Text("A", style: TextStyle(fontSize: fontSize ?? 48)),
+        ),
+      ),
+    );
+  }
+}

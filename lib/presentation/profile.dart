@@ -36,16 +36,7 @@ class Profile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 20),
-              Center(
-                child: ClipOval(
-                  child: Image.asset(
-                    'assets/images/profile.jpg',
-                    fit: BoxFit.cover,
-                    height: 180,
-                    width: 180,
-                  ),
-                ),
-              ),
+              const ProfilePicture(),
               const SizedBox(height: 20),
               const Center(
                 child: Text(

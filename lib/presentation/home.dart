@@ -22,21 +22,14 @@ class Home extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: () => context.push("/profile"),
-            child: ClipOval(
-              child: Image.asset(
-                'assets/images/profile.jpg',
-                fit: BoxFit.cover,
-                height: 35,
-                width: 35,
-              ),
-            ),
+            child: const ProfilePicture(height: 35, width: 35, fontSize: 16),
           ),
           const SizedBox(width: 10),
         ],
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
