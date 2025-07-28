@@ -96,18 +96,42 @@ class Goals extends StatelessWidget {
               ),
 
               const SizedBox(height: 30),
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-                    context.push("/dietpreference");
-                  },
-                  child: PrimaryThemedContainer(
-                    child: Text(
-                      "Continue",
-                      style: TextStyle(color: AppColors.white),
+              Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        context.pop();
+                      },
+                      child: const TertiaryThemedContainer(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Go Back",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        context.push("/dietpreference");
+                      },
+                      child: PrimaryThemedContainer(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Continue",
+                          style: TextStyle(
+                            color: AppColors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

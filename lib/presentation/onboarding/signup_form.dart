@@ -88,11 +88,17 @@ class SignupForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Text(
-              "Already have an account? Sign in",
-              style: TextStyle(
-                color: isDark ? AppColors.dark4 : AppColors.light4,
-                decoration: TextDecoration.underline,
+            GestureDetector(
+              onTap: () {
+                // context.push("/login");
+                context.pushReplacement('/login');
+              },
+              child: Text(
+                "Already have an account? Sign in",
+                style: TextStyle(
+                  color: isDark ? AppColors.dark4 : AppColors.light4,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
           ],

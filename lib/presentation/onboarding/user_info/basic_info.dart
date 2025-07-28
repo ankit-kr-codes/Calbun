@@ -138,7 +138,10 @@ class BasicInfo extends StatelessWidget {
                   child: PrimaryThemedContainer(
                     child: Text(
                       "Continue",
-                      style: TextStyle(color: AppColors.white),
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),

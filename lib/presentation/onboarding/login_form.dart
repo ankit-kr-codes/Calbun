@@ -1,6 +1,7 @@
 import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -45,7 +46,9 @@ class LoginForm extends StatelessWidget {
             const SizedBox(height: 20),
 
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.go('/home');
+              },
               child: PrimaryThemedContainer(
                 width: double.maxFinite,
                 child: Center(

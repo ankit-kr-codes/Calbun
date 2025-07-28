@@ -8,24 +8,12 @@ class AppColors {
   static Color light4 = const Color.fromRGBO(39, 100, 41, 1);
   static Color lightBgColor = const Color.fromRGBO(255, 255, 255, 1);
 
-  // static Color lightDarkGreen = const Color.fromRGBO(40, 100, 42, 1);
-  // static Color lightDarkGreen02 = const Color.fromRGBO(22, 53, 23, 1);
-  // static Color lightSecondary = const Color.fromRGBO(116, 183, 118, 1);
-  // static Color lightSoftGreen02 = const Color.fromRGBO(220, 245, 221, 1);
-  // static Color lightSoftGreen = const Color.fromRGBO(234, 240, 235, 1);
-
   //For Dark Theme
-  static Color darkPrimary = const Color.fromRGBO(20, 183, 121, 1);
-  static Color darkSecondary = const Color.fromRGBO(147, 200, 179, 1);
-  static Color darkTertiary = const Color.fromRGBO(36, 71, 58, 1);
-  static Color dark4 = const Color.fromRGBO(199, 222, 202, 1);
-  static Color darkBgColor = const Color.fromRGBO(17, 34, 27, 1);
-
-  // static Color darkDarkGreen = const Color.fromRGBO(20, 60, 22, 1);
-  // static Color darkDarkGreen02 = const Color.fromRGBO(15, 40, 18, 1);
-  // static Color darkDarkBg = const Color.fromRGBO(40, 60, 42, 1);
-  // static Color darkSoftGreen02 = const Color.fromRGBO(40, 60, 42, 1);
-  // static Color darkSoftGreen = const Color.fromRGBO(55, 75, 57, 1);
+  static Color darkPrimary = const Color.fromRGBO(20, 169, 112, 1);
+  static Color darkSecondary = const Color.fromRGBO(127, 179, 158, 1);
+  static Color darkTertiary = const Color.fromRGBO(26, 54, 44, 1);
+  static Color dark4 = const Color.fromRGBO(154, 182, 157, 1);
+  static Color darkBgColor = const Color.fromARGB(255, 12, 24, 19);
 
   //Universal Colors
   static Color white = const Color.fromRGBO(255, 255, 255, 1);
@@ -33,6 +21,7 @@ class AppColors {
   static Color black = const Color.fromRGBO(0, 0, 0, 1);
   static Color transparent = const Color.fromRGBO(0, 0, 0, 0);
   static Color semiTransparent = const Color.fromRGBO(0, 0, 0, 0.42);
+  static Color red = const Color.fromARGB(255, 207, 15, 15);
 
   //Gradient Colors
   List<Color> gradientList = const [

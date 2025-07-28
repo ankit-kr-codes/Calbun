@@ -1,6 +1,7 @@
 import 'package:calbun/core/custom_widget.dart';
 import 'package:calbun/core/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -17,6 +18,16 @@ class Profile extends StatelessWidget {
           "Profile",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              context.push('/profileSettings');
+            },
+            child: const Icon(Icons.edit_rounded),
+          ),
+          const SizedBox(width: 10),
+          //
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),

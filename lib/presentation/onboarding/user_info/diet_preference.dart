@@ -51,7 +51,11 @@ class DietPreference extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: AppColors.grey),
+                  border: Border.all(
+                    color: isDark
+                        ? AppColors.darkTertiary
+                        : AppColors.lightTertiary,
+                  ),
                 ),
                 child: DropdownMenu(
                   menuHeight: size.height * 0.4,
@@ -67,18 +71,41 @@ class DietPreference extends StatelessWidget {
               ),
 
               const SizedBox(height: 30),
-              Center(
-                child: GestureDetector(
-                  onTap: () {
-                    context.go("/home");
-                  },
-                  child: PrimaryThemedContainer(
-                    child: Text(
-                      "Submit",
-                      style: TextStyle(color: AppColors.white),
+              Row(
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        context.pop();
+                      },
+                      child: const TertiaryThemedContainer(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Go Back",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/home");
+                      },
+                      child: PrimaryThemedContainer(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Submit",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

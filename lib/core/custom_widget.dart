@@ -156,13 +156,7 @@ class SquaredBoxedContainer extends StatelessWidget {
       margin: margin ?? const EdgeInsets.all(3),
       decoration: BoxDecoration(
         color: isDark ? AppColors.darkTertiary : AppColors.lightTertiary,
-        borderRadius: BorderRadius.circular(20),
-        border: bordered
-            ? Border.all(
-                color: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
-                width: borderWidth ?? 0.0,
-              )
-            : null,
+        borderRadius: BorderRadius.circular(15),
       ),
       child: child,
     );
@@ -198,7 +192,7 @@ class DataTile extends StatelessWidget {
           ),
           child: Icon(
             iconData,
-            color: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
+            color: isDark ? AppColors.darkSecondary : AppColors.lightSecondary,
           ),
         ),
         const SizedBox(width: 15),
@@ -209,7 +203,9 @@ class DataTile extends StatelessWidget {
             Text(
               "$value $unit",
               style: TextStyle(
-                color: isDark ? AppColors.darkPrimary : AppColors.lightPrimary,
+                color: isDark
+                    ? AppColors.darkSecondary
+                    : AppColors.lightPrimary,
                 fontSize: 12,
               ),
             ),
@@ -252,7 +248,9 @@ class BorderedRadioTile extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.grey),
+        border: Border.all(
+          color: isDark ? AppColors.darkTertiary : AppColors.lightTertiary,
+        ),
         borderRadius: BorderRadius.circular(10),
       ),
       child: RadioListTile(

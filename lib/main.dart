@@ -60,11 +60,16 @@ class MainShell extends StatelessWidget {
       }
     }
 
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       body: child,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         elevation: 0,
+        selectedItemColor: isDark
+            ? AppColors.darkSecondary
+            : AppColors.lightPrimary,
         enableFeedback: false,
         onTap: onTap,
         type: BottomNavigationBarType.fixed,

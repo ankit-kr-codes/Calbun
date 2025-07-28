@@ -57,7 +57,7 @@ class Settings extends StatelessWidget {
               const SizedBox(height: 20),
               ListTile(
                 onTap: () {
-                  context.push('/profile');
+                  context.push('/profileSettings');
                 },
                 hoverColor: AppColors.transparent,
                 splashColor: AppColors.transparent,
